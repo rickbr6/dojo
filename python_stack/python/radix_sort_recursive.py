@@ -1,5 +1,3 @@
-import timeit
-
 
 def get_digit(num, place):
     """
