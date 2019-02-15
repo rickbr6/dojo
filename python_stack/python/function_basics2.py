@@ -46,7 +46,7 @@ def this_len_that_val(size, value):
     return new_list
 
 
-print(this_len_that_val(6, 2))
+# print(this_len_that_val(6, 2))
 
 
 
