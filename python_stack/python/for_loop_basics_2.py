@@ -70,7 +70,36 @@ def ult(new_list):
     return ult_dict
 
 
-print(ult([37, 2, 1, -9]))
+# print(ult([37, 2, 1, -9]))
+
+
+def reverse_list(the_list):
+
+    # Determine how many passes will be needed
+    iters = len(the_list) // 2
+
+    # swap first with last, second with second from last, etc
+    for i in range(0, iters):
+
+        # find the index of the item to swap to
+        target = len(the_list) - 1 - i
+
+        # save target value to complete the swap
+        temp = the_list[target]
+
+        # perform the swap
+        the_list[target] = the_list[i]
+        the_list[i] = temp
+
+    return the_list
+
+
+# print(reverse_list([1, 2, 3, 4, 5, 6]))
+
+
+
+
+
 
 
 
