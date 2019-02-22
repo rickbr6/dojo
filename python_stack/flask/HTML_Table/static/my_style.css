@@ -1,0 +1,25 @@
+*{
+    /*outline: 2px dotted red;*/
+    /*background-color: red;*/
+}
+
+table, thead {
+    table-layout: fixed;
+    /*width: 100%;*/
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+thead tr th {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+tbody tr td{
+    color: red;
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
