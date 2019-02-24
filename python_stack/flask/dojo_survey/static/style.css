@@ -1,0 +1,52 @@
+.container {
+    border: 2px solid black;
+    min-width:  550px;
+    height: auto;
+    padding: 10px;
+    margin: 50px;
+    display: inline-block;
+}
+
+form {
+
+    padding: auto;
+}
+
+fieldset {
+    display: block;
+    width: 65%;
+    margin: auto;
+    border: 1px dotted red;
+}
+
+fieldset label,input, select {
+    padding: 5px;
+    margin: 5px;
+}
+
+#name_label {
+    padding-right: 24px;
+}
+
+textarea {
+    margin-left: 10px;
+    padding-right: 5px;
+}
+
+#favorite_language {
+    margin-bottom: 15px;
+    padding-right: 91px;
+}
+
+#submit {
+    margin-left: 400px;
+}
+
+#dojo_location {
+    margin-left: 33px;
+    padding-right: 72px;
+}
+
+#name {
+    margin-left: 33px;
+}
