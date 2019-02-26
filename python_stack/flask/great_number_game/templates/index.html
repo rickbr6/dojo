@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/bootstrap.css') }}">
 </head>
 <body>
-$END$
+<main role="main">
+    <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Welcome to the Great Number Game!</h1>
+            <p class="lead text-muted">I am thinking of a number between 1 and 100</p>
+
+
+
+
+
+
+            <form action="http://127.0.0.1:5000/guess" method="post">
+                <div class="form-group">
+                    <label for="user_guess">{{session['commentary']}}</label>
+                    <input type="text" class="form-control" name="user_guess" placeholder="Enter a number here">
+                </div>
+
+{#                <div class="d-flex justify-content-center" id="num_response" style="height: 200px;">I'm a flexbox container!</div>#}
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="http://127.0.0.1:5000/clear" class="btn btn-secondary my-2">Reset</a>
+            </form>
+          </div>
+        </section>
+
+
+</main>
 </body>
 </html>
