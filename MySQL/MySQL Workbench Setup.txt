@@ -1,0 +1,15 @@
+USE twitter;
+SELECT * FROM tweets
+
+SELECT tweet from tweets
+WHERE user_id = 2
+
+INSERT INTO tweets (tweet, user_id, created_at, updated_at)
+VALUES ("Luke, I am your bio-dad", 1, now(), now())
+
+UPDATE tweets SET
+tweet = "Luke, I am your father"
+WHERE id = 13
+
+DELETE FROM tweets 
+WHERE id = 13
