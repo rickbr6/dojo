@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header id="all-users" class="site-header">
+        <nav class="site-nav family-sans text-uppercase navbar-expand-md bg-secondary navbar-dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#page-hero"><i class="fas fa-users"></i> Users</a>
+
+                <section class="collapse navbar-collapse" id="myTogglerNav">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="/">Home</a>
+{#                        <a class="nav-item nav-link" href="/users/new">New User</a>#}
+                    </div>
+                </section>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container h-100">
+        <br>
+        <form action="http://127.0.0.1:5000/users/{{ id }}/update" style="width: 500px; margin: auto" id="edit_user" method="POST">
+            <h2 class="text-center">Edit User {{ id }}</h2>
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" class="form-control" value="{{ fname }}">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" class="form-control" value="{{ lname }}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="text" name="email" id="email" class="form-control" value="{{ email }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/" id="cancel" name="cancel" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
