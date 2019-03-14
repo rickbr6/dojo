@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header id="all-users" class="site-header">
+        <nav class="site-nav family-sans text-uppercase navbar-expand-md bg-secondary navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="users.html"><i class="fas fa-users"></i> Dojo Tweets</a>
+
+                <section class="collapse navbar-collapse" id="myTogglerNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="logout">Log Out</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text navbar-right">Welcome, {{ fname }}</span>
+                </section>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <form action="/tweets/create" class="span6" method="Post">
+            <h2>Write a Tweet</h2>
+            <label for="tweet"></label>
+            <textarea name="tweet" id="tweet" cols="30" rows="10"></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="container h-100">
+        <div class="list-group">
+            {% for tweet in tweets %}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-50 justify-content-left">
+                    <h5 class="mb-1">{{ tweet['full_name']}} wrote:</h5>
+                </div>
+                <p class="mb-1">{{ tweet['content'] }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
