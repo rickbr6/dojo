@@ -37,12 +37,34 @@
     <div class="container h-100">
         <div class="list-group">
             {% for tweet in tweets %}
-            <a href="#" class="list-group-item list-group-item-action">
+            <div href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-50 justify-content-left">
                     <h5 class="mb-1">{{ tweet['full_name']}} wrote:</h5>
                 </div>
                 <p class="mb-1">{{ tweet['content'] }}</p>
-            </a>
+
+
+                <form action="/tweets/{{ tweet['id'] }}/add_like" class="form-tweet form-inline" method="Post">
+                    <button type="submit" class="my-btn btn btn-primary btn-sm" value="like">Like</button>
+                </form>
+                {% if session['id'] == tweet['user_id'] %}
+                    <form action="/tweets/{{ tweet['id'] }}/delete" class="form-tweet form-inline" method="Post">
+                        <button type="submit" class="my-btn btn btn-secondary btn-sm" value="delete">Delete</button>
+                    </form>
+                {% endif %}
+
+
+{#                <ul class="nav justify-content-end">#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link active" href="/tweets/{{ tweet['id'] }}/add_like">Like</a>#}
+{#                     </li>#}
+{#                    {% if session['id'] == tweet['user_id'] %}#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="/tweets/{{ tweet['id'] }}/delete" >Delete</a>#}
+{#                        </li>#}
+{#                    {% endif %}#}
+{#                </ul>#}
+            </div>
             {% endfor %}
         </div>
     </div>
