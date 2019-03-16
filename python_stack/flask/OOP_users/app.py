@@ -43,14 +43,9 @@ guido = User('Guido', 'Van Rossum', 'guido@email.com')
 monty = User('Monty', 'Python', 'monty@email.com')
 rick = User('Rick', 'Brown', 'rickbr@email.com')
 
-guido.make_deposit(50)
-guido.make_deposit(50)
-guido.make_deposit(50)
-guido.display_user_balance()
-guido.make_withdrawal(50)
-guido.display_user_balance()
-guido.transfer_money(rick, 50)
-guido.display_user_balance()
+guido.make_deposit(50).make_deposit(100).make_deposit(200).display_user_balance()
+guido.make_withdrawal(50).display_user_balance()
+guido.transfer_money(rick, 50).display_user_balance()
 rick.display_user_balance()
 
 
